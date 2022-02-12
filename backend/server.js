@@ -1,14 +1,10 @@
 const express = require("express");
-
 const app = express();
-
 const cors = require("cors");
-
 const mongoose = require("mongoose");
-
 const shortUrl = require("./model/short");
-
 const userRouter = require("./routes/user");
+require("dotenv").config();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -16,13 +12,11 @@ app.use(express.json());
 app.use(cors());
 
 const PORT = process.env.PORT || 5000;
+const CONNECT = process.env.CONNECT;
 
 // db
 mongoose
-  .connect(
-    "mongodb+srv://admin:ASoXe81kCnFO8Yv5@cluster0.etvc2.mongodb.net/linker?retryWrites=true&w=majority",
-    { useUnifiedTopology: true, useNewUrlParser: true }
-  )
+  .connect(CONNECT, { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => {
     console.log("mongo connected");
     app.listen(PORT, () => {
