@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "insFront": "(cd frontend && yarn)",
+    "insBack": "(cd backend && nom i)",
+    "startFront": "(cd frontend && yarn start)",
+    "startBack": "(cd backend && yarn start)",
+    "install": "concurrently \" yarn insFront \" \" yarn insBack\" ",
+    "start": "concurrently \" yarn startFront \" \" yarn startBack\" "
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
