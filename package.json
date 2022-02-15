@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "insFront": "(cd frontend && yarn)",
-    "insBack": "(cd backend && nom i)",
+    "insFront": "(cd frontend && yarn install --prefix frontend)",
+    "insBack": "(cd backend && yarn install --prefix backend)",
     "startFront": "(cd frontend && yarn start)",
     "startBack": "(cd backend && yarn start)",
     "install": "concurrently \" yarn insFront \" \" yarn insBack\" ",
